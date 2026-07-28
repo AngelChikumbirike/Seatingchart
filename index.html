@@ -5,58 +5,165 @@
     <title>Noah & Vimbikai's Wedding</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 700px;
-            margin: auto;
-            padding: 30px;
-            text-align: center;
-            background-color: #fafafa;
-        }
+       <style>
 
-        h1 {
-            margin-bottom: 10px;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin-top: 20px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #fafafa;
+    text-align: center;
+}
 
-        input {
-            width: 80%;
-            padding: 12px;
-            font-size: 16px;
-            margin-top: 15px;
-        }
 
-        button {
-            margin-top: 15px;
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+/* Main website container */
+.container {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
 
-        #result {
-            margin-top: 20px;
-            font-size: 18px;
-        }
 
-        #photoSection {
-            display: none;
-        }
+/* Headings */
+h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    margin-bottom: 10px;
+}
 
-        img {
-            width: 200px;
-            margin-top: 20px;
-        }
+h2 {
+    font-size: clamp(20px, 4vw, 28px);
+}
+
+
+/* Cards for seating chart and photo section */
+.card {
+    width: 100%;
+    background: white;
+    padding: clamp(15px, 4vw, 30px);
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* Search box */
+input {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+/* Buttons */
+button {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* Search result */
+#result {
+    margin-top: 25px;
+    font-size: clamp(16px, 3vw, 20px);
+}
+
+
+/* Photo section hidden until guest found */
+#photoSection {
+    display: none;
+}
+
+
+/* QR code and images */
+img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 20px;
+}
+
+
+/* Paragraph text */
+p {
+    font-size: clamp(15px, 2.5vw, 18px);
+    line-height: 1.6;
+}
+
+
+/* -------------------------
+   Mobile Devices
+-------------------------- */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+
+    .card {
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+
+
+    button {
+        max-width: 100%;
+    }
+
+
+    input {
+        font-size: 16px;
+    }
+
+}
+
+
+/* -------------------------
+   Tablets
+-------------------------- */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .container {
+        max-width: 650px;
+    }
+
+}
+
+
+/* -------------------------
+   Large Screens
+-------------------------- */
+
+@media (min-width: 1200px) {
+
+    .container {
+        max-width: 850px;
+    }
+
+}
+
+</style>
     </style>
 </head>
 <body>
-
+<div class="container">
     <h1>Noah & Vimbikai's Wedding</h1>
 
     <p>
@@ -103,6 +210,7 @@
         <img src="qr-code.png"
              alt="Wedding Album QR Code">
 
+    </div>
     </div>
 
     <script>
