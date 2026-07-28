@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Noah & Vimbikai's Wedding</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            text-align: center;
+            background-color: #fafafa;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        input {
+            width: 80%;
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #photoSection {
+            display: none;
+        }
+
+        img {
+            width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Angel & Partner's Wedding</h1>
+
+    <p>
+        Welcome! Search for your name to find your table.
+    </p>
+
+    <div class="card">
+
+        <input
+            type="text"
+            id="guestName"
+            placeholder="Enter your full name"
+        >
+
+        <br>
+
+        <button onclick="findGuest()">
+            Find My Seat
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <div class="card" id="photoSection">
+
+        <h2>Share Your Memories</h2>
+
+        <p id="personalMessage"></p>
+
+        <p>
+            We'd love to see our wedding through your eyes!
+            Please upload any photos or videos you take
+            throughout the day.
+        </p>
+
+        <button onclick="openAlbum()">
+            Upload Photos & Videos
+        </button>
+
+        <p>Or scan the QR code below:</p>
+
+        <!-- Replace with your QR code -->
+        <img src="qr-code.png"
+             alt="Wedding Album QR Code">
+
+    </div>
+
+    <script>
+
+        const SHEET_URL =
+            "https://docs.google.com/spreadsheets/d/e/2PACX-1vRbOPaPzqHawz95OAF97j8OD9zwOFewVXFuYzL9TPEWuNmLbELjDTl-PHPjd6YIOi7LyaeUCeN3QX2Z/pub?output=csv";
+
+        const ALBUM_LINK =
+            "https://www.icloud.com/sharedalbum/#B2CJtdOXmKFrrXa" ;
+
+        let guests = [];
+
+        async function loadGuests() {
+
+            const response =
+                await fetch(SHEET_URL);
+
+            const csv =
+                await response.text();
+
+            const rows =
+                csv.trim().split("\n");
+
+            for (let i = 1; i < rows.length; i++) {
+
+                const [name, table] =
+                    rows[i].split(",");
+
+                guests.push({
+                    name: name.trim(),
+                    table: table.trim()
+                });
+            }
+        }
+
+        async function findGuest() {
+
+            if (guests.length === 0) {
+                await loadGuests();
+            }
+
+            const search =
+                document
+                    .getElementById(
+                        "guestName"
+                    )
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+            const guest =
+                guests.find(
+                    g =>
+                        g.name.toLowerCase()
+                        === search
+                );
+
+            const result =
+                document.getElementById(
+                    "result"
+                );
+
+            const photoSection =
+                document.getElementById(
+                    "photoSection"
+                );
+
+            const personalMessage =
+                document.getElementById(
+                    "personalMessage"
+                );
+
+            if (guest) {
+
+                result.innerHTML = `
+                    <h2>
+                        Welcome,
+                        ${guest.name}!
+                    </h2>
+
+                    <p>
+                        You are seated at
+                        <b>Table ${guest.table}</b>.
+                    </p>
+                `;
+
+                personalMessage.innerHTML = `
+                    Hey ${guest.name},
+
+                    thank you for celebrating
+                    with us! We'd love for
+                    you to share any photos
+                    and videos you take today.
+                `;
+
+                photoSection.style.display =
+                    "block";
+
+            } else {
+
+                result.innerHTML =
+                    "<p>Guest not found.</p>";
+
+                photoSection.style.display =
+                    "none";
+            }
+        }
+
+        function openAlbum() {
+
+            window.open(
+                ALBUM_LINK,
+                "_blank"
+            );
+        }
+
+    </script>
+
+</body>
+</html>
