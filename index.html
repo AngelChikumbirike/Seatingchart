@@ -1,33 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Tutsi & Taffy's Wedding</title>
 
     <style>
 
+        /* =========================
+           GENERAL
+        ========================== */
+
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
             width: 100%;
             min-height: 100vh;
+
             margin: 0;
-            padding: 20px;
-            background-color: #faf8f8;
+            padding: 10px;
+
+            background-color: #F8F5EC;
+
             text-align: center;
+
+            color: #6F5732;
 
             display: flex;
             justify-content: center;
             align-items: flex-start;
         }
 
-        /* Main website container */
+
+        /* =========================
+           MAIN CONTAINER
+        ========================== */
+
         .container {
-            width: 90%;
+            width: 92%;
             max-width: 500px;
+
             margin: 0 auto;
 
             display: flex;
@@ -35,237 +56,469 @@
             align-items: center;
         }
 
-        /* -------------------------
-           background Header
-        -------------------------- */
+
+        /* =========================
+           FLORAL HEADER
+        ========================== */
 
         .background-header {
             width: 100%;
-            margin-top: 5px;
-            margin-bottom: -5px;
+
+            height: 190px;
+
+            margin: -5px 0 0 0;
+
             display: flex;
             justify-content: center;
+            align-items: flex-start;
+
             overflow: hidden;
         }
 
+
         .background-header img {
             width: 100%;
-            max-width: 400px;
-            height: auto;
-            display: block;
+
+            max-width: 500px;
+
+            height: 260px;
+
             object-fit: contain;
+
+            object-position: top center;
+
+            display: block;
         }
 
-        /* Wedding title */
+
+        /* =========================
+           WEDDING TITLE
+        ========================== */
+
         h1 {
-            font-family: Georgia, serif;
+            font-family: Georgia, "Times New Roman", serif;
+
             font-weight: normal;
+
             font-size: clamp(32px, 7vw, 45px);
-            color: #4a3b3b;
-            margin: 5px 0 10px;
+
+            color: #6F5732;
+
+            margin: -5px 0 5px;
+
+            line-height: 1.15;
         }
 
-        /* Subtitle */
+
+        /* =========================
+           WELCOME TEXT
+        ========================== */
+
         .welcome-text {
             font-size: clamp(15px, 2.5vw, 18px);
-            color: #6d6262;
-            line-height: 1.6;
-            margin-top: 0;
+
+            color: #806F55;
+
+            line-height: 1.4;
+
+            margin: 0 0 10px;
         }
 
-        /* Cards */
+
+        /* =========================
+           CARDS
+        ========================== */
+
         .card {
             width: 100%;
-            background: white;
-            padding: clamp(20px, 4vw, 30px);
-            margin: 20px auto;
+
+            background: #FFFDF8;
+
+            padding: 20px;
+
+            margin: 10px auto;
+
             border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+            border: 1px solid #E5D8BA;
+
+            box-shadow:
+                0 3px 10px rgba(111, 87, 50, 0.08);
         }
 
-        /* Search box */
+
+        /* =========================
+           SEARCH BOX
+        ========================== */
+
         input {
             width: 100%;
+
             max-width: 300px;
-            padding: 15px;
+
+            padding: 14px;
+
             font-size: 16px;
-            border: 1px solid #d8cece;
+
+            border: 1px solid #D8C9A8;
+
             border-radius: 8px;
+
             outline: none;
-        }
 
-        input:focus {
-            border-color: #b99a9a;
-        }
+            background-color: #FFFDF8;
 
-        /* Buttons */
-        button {
-            width: 80%;
-            max-width: 300px;
-            margin-top: 15px;
-            padding: 15px;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
+            color: #5F5038;
 
-            background-color: #9b7b7b;
-            color: white;
+            text-align: center;
 
             transition: 0.2s;
         }
 
+
+        input::placeholder {
+            color: #A4967D;
+        }
+
+
+        input:focus {
+            border-color: #B89A5A;
+
+            box-shadow:
+                0 0 0 2px rgba(184, 154, 90, 0.12);
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        button {
+            width: 80%;
+
+            max-width: 300px;
+
+            margin-top: 12px;
+
+            padding: 14px;
+
+            font-size: 16px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            background-color: #B89A5A;
+
+            color: white;
+
+            transition:
+                background-color 0.2s,
+                transform 0.15s;
+        }
+
+
         button:hover {
-            background-color: #806262;
+            background-color: #967A43;
+
+            transform: translateY(-1px);
         }
 
-        /* Headings */
+
+        button:active {
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           HEADINGS
+        ========================== */
+
         h2 {
-            font-family: Georgia, serif;
+            font-family: Georgia, "Times New Roman", serif;
+
             font-weight: normal;
+
             font-size: clamp(25px, 4vw, 28px);
-            color: #4a3b3b;
+
+            color: #6F5732;
+
+            margin-top: 5px;
+
+            margin-bottom: 12px;
         }
 
-        /* Search result */
+
+        /* =========================
+           SEARCH RESULT
+        ========================== */
+
         #result {
-            margin-top: 25px;
+            margin-top: 15px;
+
             font-size: clamp(16px, 3vw, 20px);
-            color: #4a3b3b;
+
+            color: #6F5732;
         }
 
-        /* Photo section hidden until guest found */
+
+        #result h2 {
+            margin-bottom: 8px;
+        }
+
+
+        #result p {
+            margin: 8px 0;
+        }
+
+
+        #result b {
+            color: #9A7738;
+        }
+
+
+        /* =========================
+           SEATED WITH YOU
+        ========================== */
+
+        #result ul {
+            margin: 8px 0 !important;
+        }
+
+
+        #result li {
+            color: #806F55;
+
+            padding: 3px 0;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           PHOTO SECTION
+        ========================== */
+
         #photoSection {
             display: none;
+
+            margin-top: 10px;
         }
 
-        /* QR code */
-        #photoSection img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin-top: 20px;
+
+        #photoSection p {
+            color: #806F55;
         }
 
-        /* Paragraph text */
+
+        /* =========================
+           PARAGRAPH TEXT
+        ========================== */
+
         p {
             font-size: clamp(15px, 2.5vw, 18px);
-            line-height: 1.6;
+
+            line-height: 1.5;
+
+            color: #806F55;
         }
 
-        /* Footer */
+
+        /* =========================
+           FOOTER
+        ========================== */
+
         footer {
             width: 100%;
-            margin-top: 50px;
-            padding: 25px 15px;
+
+            margin-top: 25px;
+
+            padding: 20px 15px;
+
             text-align: center;
+
             font-size: 14px;
-            color: #777;
-            line-height: 1.8;
-            border-top: 1px solid #e5dddd;
+
+            color: #8C806D;
+
+            line-height: 1.6;
+
+            border-top: 1px solid #E5D8BA;
         }
+
 
         footer p {
             margin: 5px 0;
+
+            font-size: 14px;
         }
 
+
         footer a {
-            color: inherit;
+            color: #9A7738;
+
             text-decoration: none;
+
             font-weight: bold;
         }
+
 
         footer a:hover {
             text-decoration: underline;
         }
 
 
-        /* -------------------------
-           Mobile Devices
-        -------------------------- */
+        /* =========================
+           MOBILE
+        ========================== */
 
         @media (max-width: 500px) {
 
             body {
-                padding: 10px;
+                padding: 5px;
             }
+
 
             .container {
-                width: 95%;
+                width: 94%;
             }
 
+
             .background-header {
+                height: 170px;
+
                 margin-top: 0;
             }
 
+
             .background-header img {
-                width: 100%;
-                max-width: 400px;
+                width: 110%;
+
+                max-width: 450px;
+
+                height: 235px;
             }
+
+
+            h1 {
+                font-size: clamp(30px, 8vw, 40px);
+
+                margin-top: -3px;
+
+                margin-bottom: 5px;
+            }
+
+
+            .welcome-text {
+                margin-bottom: 8px;
+            }
+
 
             .card {
-                margin-top: 25px;
-                border-radius: 10px;
+                padding: 18px;
+
+                margin: 8px auto;
+
+                border-radius: 12px;
             }
+
 
             button {
-                max-width: 60%;
+                width: 85%;
+
+                max-width: 280px;
             }
 
+
             input {
-                font-size: 18px;
+                font-size: 17px;
             }
+
+
+            footer {
+                margin-top: 20px;
+
+                padding: 18px 10px;
+            }
+
         }
 
 
-        /* -------------------------
-           Tablets
-        -------------------------- */
+        /* =========================
+           TABLETS
+        ========================== */
 
         @media (min-width: 601px) and (max-width: 1024px) {
 
             .container {
-                max-width: 650px;
+                max-width: 600px;
             }
 
-            .background-header img {
-                width: 110%;
+
+            .background-header {
+                height: 210px;
             }
+
+
+            .background-header img {
+                width: 100%;
+
+                max-width: 550px;
+
+                height: 280px;
+            }
+
         }
 
 
-        /* -------------------------
-           Large Screens
-        -------------------------- */
+        /* =========================
+           LARGE SCREENS
+        ========================== */
 
         @media (min-width: 1200px) {
 
             .container {
-                max-width: 850px;
+                max-width: 600px;
             }
 
-            .background-header img {
-                max-width: 750px;
+
+            .background-header {
+                height: 220px;
             }
+
+
+            .background-header img {
+                max-width: 580px;
+
+                height: 300px;
+            }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
+
     <!-- =========================
-         background HEADER
+         FLORAL HEADER
     ========================== -->
 
     <div class="background-header">
+
         <img
             src="background-header.png"
             alt="Watercolor wedding flowers"
         >
+
     </div>
 
 
@@ -273,7 +526,10 @@
          WEDDING TITLE
     ========================== -->
 
-    <h1> Tutsi & Taffy's Wedding</h1>
+    <h1>
+        Tutsi & Taffy's Wedding
+    </h1>
+
 
     <p class="welcome-text">
         Welcome! Search for your name to find your table.
@@ -286,19 +542,25 @@
 
     <div class="card">
 
+
         <input
             type="text"
             id="guestName"
             placeholder="Enter your full name"
+            autocomplete="off"
         >
 
+
         <br>
+
 
         <button onclick="findGuest()">
             Find My Seat
         </button>
 
+
         <div id="result"></div>
+
 
     </div>
 
@@ -307,11 +569,19 @@
          PHOTO SECTION
     ========================== -->
 
-    <div class="card" id="photoSection">
+    <div
+        class="card"
+        id="photoSection"
+    >
 
-        <h2>Share Your Memories</h2>
+
+        <h2>
+            Share Your Memories
+        </h2>
+
 
         <p id="personalMessage"></p>
+
 
         <p>
             We'd love to see our wedding through your eyes!
@@ -319,11 +589,11 @@
             throughout the day.
         </p>
 
+
         <button onclick="openAlbum()">
             Upload Photos & Videos
         </button>
 
-        
 
     </div>
 
@@ -334,11 +604,12 @@
 
     <footer>
 
-       
+
         <p>
             Interested in a custom wedding seating chart
             for your event?
         </p>
+
 
         <p>
             Call or text Angel:
@@ -347,218 +618,387 @@
             </a>
         </p>
 
+
     </footer>
+
 
 </div>
 
 
+
 <script>
 
+
+    /* =========================
+       GOOGLE SHEET
+    ========================== */
+
     const SHEET_URL =
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRv7Kms9eE3SapoScpTbZYxJEmkkWfmJ7QJkU2NRy_qVvyBSuTXLKjaN4iWVS_hZblByxbwW5T2K-J0/pub?output=csv"
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRv7Kms9eE3SapoScpTbZYxJEmkkWfmJ7QJkU2NRy_qVvyBSuTXLKjaN4iWVS_hZblByxbwW5T2K-J0/pub?output=csv";
+
+
+    /* =========================
+       PHOTO ALBUM
+    ========================== */
 
     const ALBUM_LINK =
         "https://www.icloud.com/sharedalbum/#B2CJtdOXmKFrrXa";
 
 
+    /* =========================
+       GUEST DATA
+    ========================== */
+
     let guests = [];
 
+
+    /* =========================
+       LOAD GUESTS
+    ========================== */
 
     async function loadGuests() {
 
         const response =
             await fetch(SHEET_URL);
 
+
         const csv =
             await response.text();
+
 
         const rows =
             csv.trim().split("\n");
 
 
-        for (let i = 1; i < rows.length; i++) {
+        guests = [];
 
-            const [name, table, groupId] =
+
+        for (
+            let i = 1;
+            i < rows.length;
+            i++
+        ) {
+
+            const [
+                name,
+                table,
+                groupId
+            ] =
                 rows[i].split(",");
+
+
+            if (!name) {
+                continue;
+            }
 
 
             guests.push({
 
-                name: name.trim(),
+                name:
+                    name.trim(),
 
-                table: table.trim(),
+                table:
+                    table
+                    ? table.trim()
+                    : "",
 
-                groupId: groupId.trim()
+                groupId:
+                    groupId
+                    ? groupId.trim()
+                    : ""
 
             });
+
         }
+
     }
 
 
-    
-async function findGuest() {
+    /* =========================
+       FIND GUEST
+    ========================== */
 
-    if (guests.length === 0) {
-        await loadGuests();
-    }
-
-
-    const search =
-        document
-            .getElementById("guestName")
-            .value
-            .trim()
-            .toLowerCase();
+    async function findGuest() {
 
 
-    const guest =
-        guests.find(
-            g =>
-                g.name.toLowerCase() === search
-        );
+        if (guests.length === 0) {
+
+            try {
+
+                await loadGuests();
+
+            }
+
+            catch (error) {
+
+                document
+                    .getElementById("result")
+                    .innerHTML = `
+
+                        <p>
+                            Unable to load the guest list.
+                            Please try again.
+                        </p>
+
+                    `;
+
+                return;
+
+            }
+
+        }
 
 
-    const result =
-        document.getElementById("result");
+        const search =
+            document
+                .getElementById("guestName")
+                .value
+                .trim()
+                .toLowerCase();
 
 
-    const photoSection =
-        document.getElementById("photoSection");
+        const result =
+            document
+                .getElementById("result");
 
 
-    const personalMessage =
-        document.getElementById("personalMessage");
+        const photoSection =
+            document
+                .getElementById("photoSection");
 
 
-    if (guest) {
+        const personalMessage =
+            document
+                .getElementById("personalMessage");
 
-        /*
-         * If the guest has NO Group ID,
-         * they are an individual guest.
-         *
-         * Only show their own name and table.
-         */
 
-        if (!guest.groupId || guest.groupId.trim() === "") {
+        /* =========================
+           EMPTY SEARCH
+        ========================== */
+
+        if (!search) {
 
             result.innerHTML = `
 
-                <h2>
-                    Welcome, ${guest.name}!
-                </h2>
-
                 <p>
-                    You are seated at
-                    <b>Table ${guest.table}</b>.
+                    Please enter your full name.
                 </p>
 
             `;
 
+            photoSection.style.display =
+                "none";
+
+            return;
+
         }
 
-        /*
-         * If the guest HAS a Group ID,
-         * find everyone with the SAME
-         * Table Number AND Group ID.
-         */
 
-        else {
+        /* =========================
+           FIND EXACT GUEST
+        ========================== */
 
-            const seatedWithYou =
-                guests.filter(g =>
-
-                    g.table === guest.table &&
-
-                    g.groupId === guest.groupId &&
-
-                    g.name.toLowerCase() !==
-                        guest.name.toLowerCase()
-
-                );
+        const guest =
+            guests.find(
+                g =>
+                    g.name
+                        .toLowerCase()
+                        === search
+            );
 
 
-            let seatedWithYouHTML = "";
+        /* =========================
+           GUEST FOUND
+        ========================== */
+
+        if (guest) {
 
 
-            if (seatedWithYou.length > 0) {
+            /*
+             * INDIVIDUAL GUEST
+             *
+             * If there is no Group ID,
+             * only show their own name
+             * and table.
+             */
 
-                seatedWithYouHTML = `
+            if (
+                !guest.groupId ||
+                guest.groupId.trim() === ""
+            ) {
+
+
+                result.innerHTML = `
+
+                    <h2>
+                        Welcome, ${guest.name}!
+                    </h2>
 
                     <p>
-                        <b>Seated with you:</b>
+                        You are seated at
+                        <b>
+                            Table ${guest.table}
+                        </b>.
                     </p>
-
-                    <ul style="
-                        list-style: none;
-                        padding: 0;
-                        margin: 10px 0;
-                    ">
-
-                        ${
-                            seatedWithYou
-                                .map(
-                                    g =>
-                                        `<li>${g.name}</li>`
-                                )
-                                .join("")
-                        }
-
-                    </ul>
 
                 `;
 
             }
 
 
-            result.innerHTML = `
+            /*
+             * GROUP GUEST
+             *
+             * Find people with the same
+             * Table Number AND Group ID.
+             */
 
-                <h2>
-                    Welcome, ${guest.name}!
-                </h2>
+            else {
 
-                <p>
-                    You are seated at
-                    <b>Table ${guest.table}</b>.
-                </p>
 
-                ${seatedWithYouHTML}
+                const seatedWithYou =
+                    guests.filter(
+                        g =>
+
+                            g.table ===
+                            guest.table
+
+                            &&
+
+                            g.groupId ===
+                            guest.groupId
+
+                            &&
+
+                            g.name.toLowerCase() !==
+                            guest.name.toLowerCase()
+                    );
+
+
+                let seatedWithYouHTML =
+                    "";
+
+
+                if (
+                    seatedWithYou.length > 0
+                ) {
+
+
+                    seatedWithYouHTML = `
+
+                        <p>
+                            <b>
+                                Seated with you:
+                            </b>
+                        </p>
+
+                        <ul style="
+                            list-style: none;
+                            padding: 0;
+                            margin: 8px 0;
+                        ">
+
+                            ${
+                                seatedWithYou
+                                    .map(
+                                        g =>
+                                            `<li>${g.name}</li>`
+                                    )
+                                    .join("")
+                            }
+
+                        </ul>
+
+                    `;
+
+                }
+
+
+                result.innerHTML = `
+
+                    <h2>
+                        Welcome, ${guest.name}!
+                    </h2>
+
+                    <p>
+                        You are seated at
+                        <b>
+                            Table ${guest.table}
+                        </b>.
+                    </p>
+
+                    ${seatedWithYouHTML}
+
+                `;
+
+            }
+
+
+            /* =========================
+               PERSONAL PHOTO MESSAGE
+            ========================== */
+
+            personalMessage.innerHTML = `
+
+                Hey ${guest.name},
+
+                <br><br>
+
+                thank you for celebrating
+                with us! We'd love for
+                you to share any photos
+                and videos you take today.
 
             `;
+
+
+            photoSection.style.display =
+                "block";
+
+
+            /* Scroll slightly toward result */
+
+            setTimeout(() => {
+
+                result.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }, 100);
 
         }
 
 
-        personalMessage.innerHTML = `
+        /* =========================
+           GUEST NOT FOUND
+        ========================== */
 
-            Hey ${guest.name},
-
-            <br><br>
-
-            thank you for celebrating
-            with us! We'd love for
-            you to share any photos
-            and videos you take today.
-
-        `;
+        else {
 
 
-        photoSection.style.display =
-            "block";
+            result.innerHTML = `
+
+                <p>
+                    Guest not found.
+                    Please check the spelling
+                    of your name and try again.
+                </p>
+
+            `;
 
 
-    } else {
+            photoSection.style.display =
+                "none";
 
-        result.innerHTML =
-            "<p>Guest not found.</p>";
-
-
-        photoSection.style.display =
-            "none";
+        }
 
     }
 
-}
 
+    /* =========================
+       OPEN PHOTO ALBUM
+    ========================== */
 
     function openAlbum() {
 
@@ -569,4 +1009,32 @@ async function findGuest() {
 
     }
 
+
+    /* =========================
+       ENTER KEY SUPPORT
+    ========================== */
+
+    document
+        .getElementById("guestName")
+        .addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Enter"
+                ) {
+
+                    findGuest();
+
+                }
+
+            }
+        );
+
+
 </script>
+
+
+</body>
+
+</html>
