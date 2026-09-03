@@ -58,39 +58,33 @@
 
 
         /* =========================
-           FLORAL HEADER
-        ========================== */
+   FLORAL HEADER
+========================= */
 
-        .background-header {
-            width: 100%;
+.background-header {
+    width: 100%;
+    height: 275px;
+    margin: -5px 0 0 0;
 
-            height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 
-            margin: -5px 0 0 0;
+    overflow: hidden;
+}
 
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+.background-header img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
 
-            overflow: hidden;
-        }
+    display: block;
 
-
-        .background-header img {
-            width: 100%;
-
-            max-width: 500px;
-
-            height: 260px;
-
-            object-fit: contain;
-
-            object-position: top center;
-
-            display: block;
-        }
-
-
+    /* Enlarge the artwork and crop the empty
+       transparent space underneath */
+    transform: scale(1.12);
+    transform-origin: top center;
+}
         /* =========================
            WEDDING TITLE
         ========================== */
